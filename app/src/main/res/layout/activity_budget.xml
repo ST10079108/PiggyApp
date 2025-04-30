@@ -59,7 +59,7 @@
         android:ems="10"
         android:inputType="text"
         android:paddingLeft="10dp"
-        android:text="Budget Name" />
+        />
 
     <TextView
         android:id="@+id/textView23"
@@ -79,8 +79,7 @@
         android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="number"
-        android:paddingLeft="10dp"
-        android:text="100000" />
+        android:paddingLeft="10dp"/>
 
     <TextView
         android:id="@+id/textView25"
@@ -90,7 +89,8 @@
         android:textAlignment="textStart"
         android:textColor="@color/piggy_black"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/editTextText3"
         android:layout_width="266dp"
@@ -99,8 +99,7 @@
         android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="text"
-        android:paddingLeft="10dp"
-        android:text="Monthly" />
+        android:paddingLeft="10dp" />
 
     <TextView
         android:id="@+id/textView26"
@@ -119,8 +118,7 @@
         android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="text"
-        android:paddingLeft="10dp"
-        android:text="Transportation" />
+        android:paddingLeft="10dp" />
 
     <TextView
         android:id="@+id/textView222"
@@ -131,6 +129,7 @@
         android:textColor="@color/piggy_black"
         android:textSize="16sp"
         android:textStyle="bold" />
+
     <EditText
         android:id="@+id/editTextText4"
         android:layout_width="266dp"
@@ -139,8 +138,7 @@
         android:background="@drawable/rounded_corners"
         android:ems="10"
         android:inputType="text"
-        android:paddingLeft="10dp"
-        android:text="1st day" />
+        android:paddingLeft="10dp"/>
 
     <Button
         android:id="@+id/addButton"
