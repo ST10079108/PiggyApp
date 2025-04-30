@@ -36,10 +36,11 @@ class MainActivity : AppCompatActivity() {
         // Insert product data into DB
         insertUsers()
 
-            binding.btnSignIn.setOnClickListener {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+        binding.btnSignIn.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
+
     }
 
     // Insert hardcoded drinks into database

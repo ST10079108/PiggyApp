@@ -5,4 +5,6 @@
     <color name="piggy_white">#FFFFFF</color>
     <color name="piggy_gray">#F5F5F5</color>
     <color name="piggy_brown">#6D6464</color>
+    <color name="piggy_red">#FF0000</color>
+    <color name="piggy_green">#00B110</color>
 </resources>

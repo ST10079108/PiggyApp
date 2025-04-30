@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Item" />
-    <item android:title="Item" />
-    <item android:title="Item" />
-    <item android:title="Item" />
-    <item android:title="Item" />
+    <item
+        android:id="@+id/itemStat"
+        android:icon="@drawable/prog7313_stats"
+        android:title="itemStat" />
+    <item
+        android:id="@+id/itemTrans"
+        android:icon="@drawable/prog7313_trans"
+        android:title="itemTrans" />
+    <item
+        android:id="@+id/itemHome"
+        android:icon="@drawable/prog7313_home"
+        android:title="itemHome" />
+    <item
+        android:id="@+id/itemBudget"
+        android:icon="@drawable/prog7313_briefcase"
+        android:title="itemBudget" />
+    <item
+        android:id="@+id/itemProfile"
+        android:icon="@drawable/prog7313_profile"
+        android:title="itemProfile" />
 </menu>

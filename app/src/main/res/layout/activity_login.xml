@@ -85,14 +85,14 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="30dp" />
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:backgroundTint="@color/piggy_black"
-            android:text="Add"
+            android:text="Login"
             android:textSize="16sp" />
 
     </LinearLayout>
