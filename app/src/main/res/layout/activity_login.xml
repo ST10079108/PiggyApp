@@ -21,6 +21,7 @@
             android:layout_height="30dp" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardLogin"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             app:cardBackgroundColor="@color/piggy_black"
@@ -38,49 +39,58 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="200dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:gravity="center_horizontal"
+            android:text="Username"
+            android:textColor="@color/piggy_black"
+            android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/edtUsername"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
             android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:gravity="center_horizontal|center_vertical"
+            android:inputType="text" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:gravity="center_horizontal"
+            android:text="Password"
+            android:textColor="@color/piggy_black"
+            android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/edtPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_corners"
             android:ems="10"
             android:inputType="textPassword" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="200dp" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#0D0D0D"
-            android:text="Button" />
+            android:id="@+id/addButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/piggy_black"
+            android:text="Add"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
