@@ -21,6 +21,7 @@
             android:layout_height="30dp" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardLogin"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             app:cardBackgroundColor="@color/piggy_black"
@@ -41,7 +42,7 @@
             android:layout_height="200dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -50,7 +51,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/edtUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/rounded_corners"
@@ -63,7 +64,7 @@
             android:layout_height="30dp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -72,7 +73,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/rounded_corners"
@@ -84,12 +85,12 @@
             android:layout_height="200dp" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corners"
+            android:id="@+id/addButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:backgroundTint="@color/piggy_black"
-            android:text="Button" />
+            android:text="Add"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
