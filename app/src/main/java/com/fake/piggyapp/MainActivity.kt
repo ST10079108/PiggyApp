@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.fake.piggyapp.database.AppDatabase
 import com.fake.piggyapp.database.UserDAO
 import com.fake.piggyapp.database.UserEntity
@@ -35,10 +33,10 @@ class MainActivity : AppCompatActivity() {
         // Insert product data into DB
         insertUsers()
 
-//        binding.btnSignIn.setOnClickListener {
-//            val intent = Intent(this, LoginActivity::class.java)
-//            startActivity(intent)
-//        }
+            binding.btnSignIn.setOnClickListener {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+        }
     }
 
     // Insert hardcoded drinks into database
