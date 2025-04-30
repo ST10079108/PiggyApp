@@ -2,6 +2,8 @@ package com.fake.piggyapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.fake.piggyapp.database.AppDatabase
@@ -11,6 +13,7 @@ import com.fake.piggyapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,4 +52,6 @@ class MainActivity : AppCompatActivity() {
             products.forEach { userDAO.insert(it) }
         }
     }
+
+
 }

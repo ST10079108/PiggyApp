@@ -65,4 +65,55 @@ object JsonUtils {
 
 
 
+    // Category
+    fun categoryToJson(category: CategoryEntity): String {
+        return gson.toJson(category)
+    }
+
+    fun jsonToCategory(json: String): CategoryEntity {
+        return gson.fromJson(json, CategoryEntity::class.java)
+    }
+
+    fun saveCategoryToPreferences(context: Context, category: CategoryEntity) {
+        val jsonString = categoryToJson(category)
+        val sharedPreferences = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        with(sharedPreferences.edit()) {
+            putString("order_key", jsonString)
+            apply()
+        }
+    }
+
+    fun getCategoryFromPreferences(context: Context): CategoryEntity? {
+        val sharedPreferences = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        val jsonString = sharedPreferences.getString("order_key", null)
+        return jsonString?.let { jsonToCategory(it) }
+    }
+
+
+
+
+
+    // Transaction
+    fun transactionToJson(transaction: TransactionEntity): String {
+        return gson.toJson(transaction)
+    }
+
+    fun jsonToTransaction(json: String): TransactionEntity {
+        return gson.fromJson(json, TransactionEntity::class.java)
+    }
+
+    fun saveTransactionToPreferences(context: Context, transaction: TransactionEntity) {
+        val jsonString = transactionToJson(transaction)
+        val sharedPreferences = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        with(sharedPreferences.edit()) {
+            putString("order_key", jsonString)
+            apply()
+        }
+    }
+
+    fun getTransactionFromPreferences(context: Context): TransactionEntity? {
+        val sharedPreferences = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        val jsonString = sharedPreferences.getString("order_key", null)
+        return jsonString?.let { jsonToTransaction(it) }
+    }
 }
