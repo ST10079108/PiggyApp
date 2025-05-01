@@ -56,7 +56,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@LoginActivity, "Welcome ${it.username}", Toast.LENGTH_SHORT).show()
-//                    openIntent(this@MainActivity, it.productName, OrderDetailsActivity::class.java)
+                    openIntent(this@LoginActivity, it.username, HomeActivity::class.java)
                 }
             }
         }

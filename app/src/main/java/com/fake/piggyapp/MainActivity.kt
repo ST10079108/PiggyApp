@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity() {
     // Insert hardcoded drinks into database
     private fun insertUsers() {
         val products = listOf(
-            UserEntity(username = "Michel", password = "m4")
+            UserEntity(username = "Lelo", password = "L8"),
+            UserEntity(username = "William", password = "W6"),
+            UserEntity(username = "Michel", password = "M4"),
         )
 
         CoroutineScope(Dispatchers.IO).launch {

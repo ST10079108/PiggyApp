@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.fake.piggyapp.database.UserEntity
 import com.fake.piggyapp.database.AppDatabase
 import com.fake.piggyapp.database.UserDAO
 import com.fake.piggyapp.databinding.ActivityHomeBinding
@@ -11,8 +12,7 @@ import com.fake.piggyapp.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var userDAO: UserDAO
-    private lateinit var db: AppDatabase
+    private var user = UserEntity(0, "", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,5 +50,15 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+        val userFromPrefs = JsonUtils.getUserFromPreferences(this)
+        userFromPrefs?.let { user = it }
+
+        binding.tvUsername.text = user.username
+
+        when (user.username) {
+            "Lelo" -> binding.ivUserImage.setImageResource(R.drawable.uicon1)
+            "William" -> binding.ivUserImage.setImageResource(R.drawable.uicon2)
+            "Michel" -> binding.ivUserImage.setImageResource(R.drawable.uicon3)
+        }
     }
 }
