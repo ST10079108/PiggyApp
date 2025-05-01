@@ -42,7 +42,7 @@
 
         <LinearLayout
             android:layout_width="330dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -51,7 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="TextView"
+                android:text="Amount"
                 android:textColor="@color/piggy_black"
                 android:textSize="16sp" />
 
@@ -60,14 +60,21 @@
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/rounded_corners"
                 android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="5000,00"
                 android:inputType="numberDecimal" />
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
         <LinearLayout
             android:layout_width="330dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -88,9 +95,13 @@
                 android:background="@drawable/rounded_corners" />
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
         <LinearLayout
             android:layout_width="330dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -107,12 +118,17 @@
                 android:id="@+id/spinner2"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@drawable/rounded_corners" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="330dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -130,13 +146,20 @@
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/rounded_corners"
                 android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="15/4/2025"
                 android:inputType="date" />
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
         <LinearLayout
             android:layout_width="330dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -145,7 +168,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="TextView"
+                android:text="Recurrence"
                 android:textColor="@color/piggy_black"
                 android:textSize="16sp" />
 
@@ -153,12 +176,17 @@
                 android:id="@+id/spinner3"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@drawable/rounded_corners" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="330dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -193,7 +221,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="95dp"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -203,7 +231,7 @@
         <Button
             android:id="@+id/button4"
             android:layout_width="100dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:text="Add"
             android:textColor="@color/piggy_white"
             android:textColorLink="@color/piggy_purple" />
