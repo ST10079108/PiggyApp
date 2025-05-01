@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/itemStat"
-        android:icon="@drawable/prog7313_stats"
+        android:icon="@android:drawable/ic_menu_edit"
         android:title="itemStat" />
     <item
         android:id="@+id/itemTrans"

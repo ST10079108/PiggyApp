@@ -6,13 +6,13 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "transactions")
 data class TransactionEntity(
     @PrimaryKey(autoGenerate = true) var id: Long = 0,
-    var type: String,
+    var type: String, //income or expense
     var amount: Double,
-    var date: String,
-    var category: String,
+    var date: String, // dd/mm/yy
+    var category: String, //groceries, entertainment, salary, rent
     var description: String,
-    var recurringType: String,
+    var recurringType: String, // no, weekly, monthly, yearly
     var image: ByteArray? = null,
-    var userId: Int
+    var userId: Int // Foreign key
 
 )
