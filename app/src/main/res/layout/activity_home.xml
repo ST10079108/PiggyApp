@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
@@ -20,7 +20,7 @@
 
         <ScrollView
             android:layout_width="330dp"
-            android:layout_height="wrap_content">
+            android:layout_height="687dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -125,17 +125,30 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="165dp"
+                    android:layout_height="200dp"
                     app:cardCornerRadius="15dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="165dp" />
+                    android:layout_height="165dp"
+                    app:cardCornerRadius="15dp">
+
+                </androidx.cardview.widget.CardView>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
             </LinearLayout>
         </ScrollView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="wrap_content"
+            android:id="@+id/bottomNavView"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/navigation_bar" />

@@ -38,7 +38,7 @@ object JsonUtils {
 
 
 
-    // Budget
+    // BudgetActivity
     fun budgetToJson(budget: BudgetEntity): String {
         return gson.toJson(budget)
     }

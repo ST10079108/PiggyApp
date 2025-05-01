@@ -16,7 +16,7 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Budget"
+            android:name=".BudgetActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
