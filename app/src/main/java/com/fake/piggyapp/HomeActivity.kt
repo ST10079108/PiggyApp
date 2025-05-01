@@ -53,7 +53,7 @@ class HomeActivity : AppCompatActivity() {
         val userFromPrefs = JsonUtils.getUserFromPreferences(this)
         userFromPrefs?.let { user = it }
 
-        binding.tvUsername.text = user.username
+        binding.tvUsername.text = "Welcome ${user.username}!"
 
         when (user.username) {
             "Lelo" -> binding.ivUserImage.setImageResource(R.drawable.uicon1)
