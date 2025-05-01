@@ -25,6 +25,7 @@
         android:textColor="@color/piggy_black"
         android:textAlignment="center"
         android:textSize="24sp" />
+
     <TextView
         android:id="@+id/textView22"
         android:layout_width="match_parent"
@@ -35,7 +36,7 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="@color/piggy_white"
-        android:background="@color/piggy_black"
+        android:background="@drawable/black_rounded_corners"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp" />
