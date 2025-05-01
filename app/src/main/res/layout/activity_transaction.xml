@@ -60,8 +60,10 @@
                     android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/piggy_purple"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="Search" />
+                    android:text="Search"
+                    android:textColor="@color/piggy_white" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -87,13 +89,18 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="330dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal">
+                    android:layout_height="115dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardCornerRadius="15dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp" />
 
                         <TextView
                             android:id="@+id/textView14"
@@ -123,6 +130,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:text="Expense" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -165,9 +173,15 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal|center_vertical"
-                                android:text="- R3,000" />
+                                android:text="- R3,000"
+                                android:textColor="@color/piggy_red" />
 
                         </LinearLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_weight="1" />
 
                     </LinearLayout>
 
@@ -179,13 +193,18 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="330dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal">
+                    android:layout_height="115dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardCornerRadius="15dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp" />
 
                         <TextView
                             android:id="@+id/textView17"
@@ -257,9 +276,14 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center_horizontal|center_vertical"
-                                android:text="+ R15,000" />
+                                android:text="+ R15,000"
+                                android:textColor="@color/piggy_green" />
 
                         </LinearLayout>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
 
                     </LinearLayout>
 
@@ -271,7 +295,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="30dp" >
+                    android:layout_height="30dp">
 
                     <TextView
                         android:id="@+id/textView27"
@@ -298,8 +322,13 @@
         <Button
             android:id="@+id/button"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Add" />
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:backgroundTint="@color/piggy_purple"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Add"
+            android:textAlignment="center"
+            android:textColor="@color/piggy_white" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"

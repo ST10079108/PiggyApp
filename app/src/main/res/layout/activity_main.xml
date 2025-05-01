@@ -22,17 +22,19 @@
 
         <Button
             android:id="@+id/btnSignIn"
-            android:layout_width="318dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/piggy_black"
-            android:text="Sign In" />
+            android:backgroundTint="@color/piggy_purple"
+            android:text="Sign In"
+            android:textColor="@color/piggy_white" />
 
         <Button
             android:id="@+id/btnCreateAccount"
-            android:layout_width="318dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/piggy_black"
-            android:text="Create Account" />
+            android:backgroundTint="@color/piggy_purple"
+            android:text="Create Account"
+            android:textColor="@color/piggy_white" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

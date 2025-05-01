@@ -90,8 +90,9 @@
             android:id="@+id/btnLogin"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:backgroundTint="@color/piggy_black"
+            android:backgroundTint="@color/piggy_purple"
             android:text="Login"
+            android:textColor="@color/piggy_white"
             android:textSize="16sp" />
 
     </LinearLayout>
