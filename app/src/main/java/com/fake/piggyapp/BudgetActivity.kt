@@ -1,5 +1,6 @@
 package com.fake.piggyapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -54,6 +55,11 @@ class BudgetActivity : AppCompatActivity() {
             }
 
             Toast.makeText(this, "Budget saved to history!", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnMyBudgets.setOnClickListener {
+            val intent = Intent(this, BudgetHistory::class.java)
+            startActivity(intent)
         }
     }
 }
