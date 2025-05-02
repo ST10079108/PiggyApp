@@ -30,8 +30,8 @@ class TransactionAdapter(private var transactions: List<TransactionEntity>) :
         holder.binding.tvTransactionRecurrence.text = transaction.recurringType
     }
 
-    fun updateBudgets(newBudgets: List<TransactionEntity>) {
-        this.transactions = newBudgets
+    fun updateTransactions(newTransactions: List<TransactionEntity>) {
+        this.transactions = newTransactions
         notifyDataSetChanged()
     }
 }

@@ -2,6 +2,10 @@ package com.fake.piggyapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,10 +19,17 @@ import com.fake.piggyapp.databinding.ActivityAddTransactionBinding
 import com.fake.piggyapp.databinding.ActivityBudgetBinding
 import kotlinx.coroutines.launch
 
-class AddTransactionActivity : AppCompatActivity() {
+class AddTransactionActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private lateinit var binding: ActivityAddTransactionBinding
     private var transaction = TransactionEntity(0, "", 0.0, "", "", "", "")
+    // create array of Strings
+    // and store name of courses
+    private var courses = arrayOf(
+        "C", "Data structures",
+        "Interview prep", "Algorithms",
+        "DSA with java", "OS"
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +38,16 @@ class AddTransactionActivity : AppCompatActivity() {
         binding = ActivityAddTransactionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        val spin = findViewById<Spinner>(R.id.spType)
+        spin.onItemSelectedListener = this
+        val ad: ArrayAdapter<*> = ArrayAdapter<Any?>(this,
+            android.R.layout.simple_spinner_item, courses
+        )
+        ad.setDropDownViewResource(
+            android.R.layout.simple_spinner_dropdown_item
+        )
+        spin.adapter = ad
 
         binding.btnAddTransaction.setOnClickListener{
             //Get user input
@@ -73,4 +94,10 @@ class AddTransactionActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        Toast.makeText(applicationContext, courses[position], Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {}
 }
