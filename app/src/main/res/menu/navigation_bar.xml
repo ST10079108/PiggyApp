@@ -19,6 +19,6 @@
         android:title="itemBudget" />
     <item
         android:id="@+id/itemProfile"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/img_profile"
         android:title="itemProfile" />
 </menu>
