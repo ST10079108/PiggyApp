@@ -66,6 +66,7 @@ class AddTransactionActivity : AppCompatActivity(), AdapterView.OnItemSelectedLi
         val sAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrayListOf())
         sAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         cspin.adapter = sAdapter
+        db = AppDatabase.getDatabase(this) as AppDatabase
         lifecycleScope.launch {
             val categories = db.categoryDAO().getAllCategoryNames()
             sAdapter.addAll(categories)
@@ -109,12 +110,10 @@ class AddTransactionActivity : AppCompatActivity(), AdapterView.OnItemSelectedLi
             }
 
             Toast.makeText(this, "Transaction saved to history!", Toast.LENGTH_SHORT).show()
-        }
-
-        binding.btnAddTransaction.setOnClickListener {
             val intent = Intent(this, TransactionHistory::class.java)
             startActivity(intent)
         }
+
         binding.btnNewCategory.setOnClickListener {
             val intent = Intent(this, CategoryActivity::class.java)
             startActivity(intent)
@@ -123,7 +122,11 @@ class AddTransactionActivity : AppCompatActivity(), AdapterView.OnItemSelectedLi
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        Toast.makeText(applicationContext, types[position], Toast.LENGTH_SHORT).show()
+        when (parent?.id) {
+            R.id.spType -> Toast.makeText(this, types[position], Toast.LENGTH_SHORT).show()
+            R.id.spRecurrence -> Toast.makeText(this, recurrences[position], Toast.LENGTH_SHORT).show()
+            R.id.spCategory -> Toast.makeText(this, parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {}

@@ -62,6 +62,10 @@ class TransactionHistory : AppCompatActivity() {
         }
         }
 
+        binding.btnAddTransactionPage.setOnClickListener {
+            val intent = Intent(this, AddTransactionActivity::class.java)
+            startActivity(intent)
+        }
 
 
         db = AppDatabase.getDatabase(this) as AppDatabase
