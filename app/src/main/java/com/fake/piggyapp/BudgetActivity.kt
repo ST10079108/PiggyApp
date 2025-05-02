@@ -32,6 +32,7 @@ class BudgetActivity : AppCompatActivity() {
         val spinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrayListOf())
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spin.adapter = spinnerAdapter
+        db = AppDatabase.getDatabase(this) as AppDatabase
         lifecycleScope.launch {
             val categories = db.categoryDAO().getAllCategoryNames()
             spinnerAdapter.addAll(categories)
