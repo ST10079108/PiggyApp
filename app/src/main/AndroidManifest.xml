@@ -13,13 +13,13 @@
         android:theme="@style/Theme.PiggyApp"
         tools:targetApi="31">
         <activity
+            android:name=".SearchTransactionActivity"
+            android:exported="false" />
+        <activity
             android:name=".BudgetHistory"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PrfileActivity"
             android:exported="false" />
         <activity
             android:name=".StatsActivity"
