@@ -16,6 +16,12 @@
             android:name=".BudgetHistory"
             android:exported="false" />
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".StatsActivity"
             android:exported="false" />
         <activity

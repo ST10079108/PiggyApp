@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#F8CDE2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="141dp"
+            android:layout_height="115dp"
+            android:layout_marginBottom="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_icon" />
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="18sp"
+            android:background="#6A5F5F"
+            android:padding="12dp"
+            android:textColor="#fff"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="18sp"
+            android:background="#6A5F5F"
+            android:padding="12dp"
+            android:textColor="#fff" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:itemIconTint="@null"
+            app:labelVisibilityMode="auto"
+            app:menu="@menu/navigation_bar" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
