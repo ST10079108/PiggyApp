@@ -7,7 +7,7 @@
     android:padding="12dp">
 
     <TextView
-        android:id="@+id/tvTransDate"
+        android:id="@+id/tvBudgetName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Budget Name"
@@ -15,13 +15,13 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/tvTransCategory"
+        android:id="@+id/tvBudgetCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Category" />
 
     <TextView
-        android:id="@+id/tvTransAmount"
+        android:id="@+id/tvBudgetMinimumAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Minimum Amount" />

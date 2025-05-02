@@ -57,7 +57,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/etBudgetName"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -88,7 +88,7 @@
                 android:textSize="16sp" />
 
             <Spinner
-                android:id="@+id/spinner4"
+                android:id="@+id/spnCategory"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -115,7 +115,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/editTextNumberDecimal2"
+                android:id="@+id/etBudgetAmount"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -146,7 +146,7 @@
                 android:textSize="16sp" />
 
             <Spinner
-                android:id="@+id/spinner5"
+                android:id="@+id/spnPeriod"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -168,12 +168,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="Recurrence"
+                android:text="Recurs"
                 android:textColor="@color/piggy_black"
                 android:textSize="16sp" />
 
             <Spinner
-                android:id="@+id/spinner6"
+                android:id="@+id/spnRecurs"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -192,7 +192,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnBudgetAdd"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="Add" />

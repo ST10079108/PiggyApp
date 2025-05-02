@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Transaction Date"
+        android:text="TransactionDate"
         android:textColor="@color/piggy_black"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -41,6 +41,7 @@
             android:id="@+id/tvTransAmount"
             android:layout_width="175dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
             android:text="R3000.00"
             android:textColor="@color/piggy_black"
@@ -94,10 +95,12 @@
             android:id="@+id/tvTransCategory"
             android:layout_width="175dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
             android:text="Groceries"
             android:textColor="@color/piggy_black"
             android:textSize="16sp" />
+
     </LinearLayout>
 
     <LinearLayout
