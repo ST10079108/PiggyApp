@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tvTransDate"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Transaction Date"
+        android:textColor="@color/piggy_black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:id="@+id/llAmount"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Amount"
+            android:textColor="@color/piggy_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTransAmount"
+            android:layout_width="175dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="R3000.00"
+            android:textColor="@color/piggy_black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCategory"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Category" />
+
+        <TextView
+            android:id="@+id/tvTransCategory"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:text="Category" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llDescription"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/tvTransDescription"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Description" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRecurring"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Recurs" />
+
+        <TextView
+            android:id="@+id/tvTransRecurrence"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="No" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llType"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Type" />
+
+        <TextView
+            android:id="@+id/tvTransType"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Expense" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+</LinearLayout>

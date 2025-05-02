@@ -40,11 +40,11 @@ class HomeActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
-                //R.id.itemProfile -> {
-            //                    val intent = Intent(this, ProfileActivity::class.java)
-            //                    startActivity(intent)
-            //                    true
-            //                }
+                R.id.itemProfile -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
 
             else -> false
             }
