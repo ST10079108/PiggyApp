@@ -2,6 +2,8 @@ package com.fake.piggyapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +12,11 @@ import com.fake.piggyapp.database.BudgetEntity
 import com.fake.piggyapp.databinding.ActivityBudgetBinding
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 
 class BudgetActivity : AppCompatActivity() {
+    private lateinit var db: AppDatabase
     private lateinit var binding: ActivityBudgetBinding
     private var budget = BudgetEntity(0, "", "", 0.0, 0.0)
 
@@ -22,6 +26,17 @@ class BudgetActivity : AppCompatActivity() {
 
         binding = ActivityBudgetBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //populate spinner with categories from database
+        val spin: Spinner = findViewById(R.id.spCategory)
+        val spinnerAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrayListOf())
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spin.adapter = spinnerAdapter
+        lifecycleScope.launch {
+            val categories = db.categoryDAO().getAllCategoryNames()
+            spinnerAdapter.addAll(categories)
+            spinnerAdapter.notifyDataSetChanged()
+        }
 
         binding.btnAddBudget.setOnClickListener{
             //Get user input
@@ -59,6 +74,10 @@ class BudgetActivity : AppCompatActivity() {
 
         binding.btnMyBudgets.setOnClickListener {
             val intent = Intent(this, BudgetHistory::class.java)
+            startActivity(intent)
+        }
+        binding.btnNewCategory.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
             startActivity(intent)
         }
     }

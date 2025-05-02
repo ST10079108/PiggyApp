@@ -164,10 +164,56 @@
                     android:layout_width="match_parent"
                     android:layout_height="15dp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    app:cardCornerRadius="15dp" />
+
+
+                <TextView
+                    android:id="@+id/tvMin"
+                    android:layout_width="262dp"
+                    android:layout_height="wrap_content"
+                    android:text="Minimum Amount"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/piggy_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etMin"
+                    android:layout_width="266dp"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rounded_corners"
+                    android:ems="10"
+                    android:hint="R2000"
+                    android:inputType="text"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/tvMax"
+                    android:layout_width="262dp"
+                    android:layout_height="wrap_content"
+                    android:text="Minimum Amount"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/piggy_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etMax"
+                    android:layout_width="266dp"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rounded_corners"
+                    android:ems="10"
+                    android:hint="R6000"
+                    android:inputType="text"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:id="@+id/btnSaveGoal"
+                    android:layout_width="180dp"
+                    android:layout_height="64dp"
+                    android:backgroundTint="@color/piggy_black"
+                    android:text="Save"
+                    android:textSize="15sp" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -199,9 +245,9 @@
         android:layout_height="45dp"
         app:itemIconTint="@null"
         app:labelVisibilityMode="auto"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/navigation_bar" />
+        app:menu="@menu/navigation_bar"
+        tools:layout_editor_absoluteY="686dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

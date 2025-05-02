@@ -62,5 +62,8 @@ class CategoryActivity : AppCompatActivity() {
             val intent = Intent(this, CategoryHistory::class.java)
             startActivity(intent)
         }
+        binding.btnAddCategory.setOnClickListener {
+            Toast.makeText(this, "Category saved to history!", Toast.LENGTH_SHORT).show()
+        }
     }
 }

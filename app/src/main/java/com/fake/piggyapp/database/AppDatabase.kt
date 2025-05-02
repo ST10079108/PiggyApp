@@ -5,12 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [UserEntity::class, BudgetEntity::class, CategoryEntity::class, TransactionEntity::class], version = 1)
+@Database(entities = [UserEntity::class, BudgetEntity::class, CategoryEntity::class, TransactionEntity::class, GoalEntity::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDAO(): UserDAO
     abstract fun budgetDAO(): BudgetDAO
     abstract fun categoryDAO(): CategoryDAO
     abstract fun transactionDAO(): TransactionDAO
+    abstract fun goalDAO(): GoalDAO
 
     companion object {
         @Volatile

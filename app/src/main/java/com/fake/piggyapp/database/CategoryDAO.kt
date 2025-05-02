@@ -15,4 +15,7 @@ interface CategoryDAO {
 
     @Query("DELETE FROM category")
     fun deleteAllCategories()
+
+    @Query("SELECT name FROM Category")
+    fun getAllCategoryNames(): List<String>
 }

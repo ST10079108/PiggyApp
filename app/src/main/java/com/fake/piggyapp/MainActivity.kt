@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.fake.piggyapp.database.AppDatabase
 import com.fake.piggyapp.database.UserDAO
 import com.fake.piggyapp.database.UserEntity
+import com.fake.piggyapp.database.CategoryDAO
+import com.fake.piggyapp.database.CategoryEntity
 import com.fake.piggyapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var userDAO: UserDAO
+    private lateinit var categoryDAO: CategoryDAO
     private lateinit var db: AppDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,9 +35,12 @@ class MainActivity : AppCompatActivity() {
         // Initialize DB and DAO
         db = AppDatabase.getDatabase(this) as AppDatabase
         userDAO = db.userDAO()
+        categoryDAO = db.categoryDAO()
 
-        // Insert product data into DB
+        // Insert user data into DB
         insertUsers()
+        // Insert category data into DB
+        insertCategories()
 
         binding.btnSignIn.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -53,6 +59,19 @@ class MainActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
             products.forEach { userDAO.insert(it) }
+        }
+    }
+
+    private fun insertCategories() {
+        val products = listOf(
+            CategoryEntity(name = "Food"),
+            CategoryEntity(name = "Groceries"),
+            CategoryEntity(name = "Outings")
+
+        )
+
+        CoroutineScope(Dispatchers.IO).launch {
+            products.forEach { categoryDAO.insert(it) }
         }
     }
 

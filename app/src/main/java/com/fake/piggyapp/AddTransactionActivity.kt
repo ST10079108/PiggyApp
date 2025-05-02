@@ -14,6 +14,7 @@ import com.fake.piggyapp.database.TransactionEntity
 import com.fake.piggyapp.databinding.ActivityTransactionHistoryBinding
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.fake.piggyapp.database.BudgetEntity
 import com.fake.piggyapp.databinding.ActivityAddTransactionBinding
 import com.fake.piggyapp.databinding.ActivityBudgetBinding
@@ -21,14 +22,15 @@ import kotlinx.coroutines.launch
 
 class AddTransactionActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
+    private lateinit var db: AppDatabase
     private lateinit var binding: ActivityAddTransactionBinding
     private var transaction = TransactionEntity(0, "", 0.0, "", "", "", "")
-    // create array of Strings
-    // and store name of courses
-    private var courses = arrayOf(
-        "C", "Data structures",
-        "Interview prep", "Algorithms",
-        "DSA with java", "OS"
+
+    private var types = arrayOf(
+        "Income", "Expense"
+    )
+    private var recurrences = arrayOf(
+        "Monthly", "Weekly"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,16 +40,37 @@ class AddTransactionActivity : AppCompatActivity(), AdapterView.OnItemSelectedLi
         binding = ActivityAddTransactionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+// types spinner
         val spin = findViewById<Spinner>(R.id.spType)
         spin.onItemSelectedListener = this
         val ad: ArrayAdapter<*> = ArrayAdapter<Any?>(this,
-            android.R.layout.simple_spinner_item, courses
+            android.R.layout.simple_spinner_item, types
         )
         ad.setDropDownViewResource(
             android.R.layout.simple_spinner_dropdown_item
         )
         spin.adapter = ad
+// recurrences spinner
+        val recSpin = findViewById<Spinner>(R.id.spRecurrence)
+        recSpin.onItemSelectedListener = this
+        val ada: ArrayAdapter<*> = ArrayAdapter<Any?>(this,
+            android.R.layout.simple_spinner_item, recurrences
+        )
+        ada.setDropDownViewResource(
+            android.R.layout.simple_spinner_dropdown_item
+        )
+        recSpin.adapter = ada
+// category spinner
+        //populate spinner with categories from database
+        val cspin: Spinner = findViewById(R.id.spCategory)
+        val sAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrayListOf())
+        sAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        cspin.adapter = sAdapter
+        lifecycleScope.launch {
+            val categories = db.categoryDAO().getAllCategoryNames()
+            sAdapter.addAll(categories)
+            sAdapter.notifyDataSetChanged()
+        }
 
         binding.btnAddTransaction.setOnClickListener{
             //Get user input
@@ -92,11 +115,15 @@ class AddTransactionActivity : AppCompatActivity(), AdapterView.OnItemSelectedLi
             val intent = Intent(this, TransactionHistory::class.java)
             startActivity(intent)
         }
+        binding.btnNewCategory.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        Toast.makeText(applicationContext, courses[position], Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, types[position], Toast.LENGTH_SHORT).show()
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {}
