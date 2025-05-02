@@ -47,7 +47,7 @@ object JsonUtils {
         return gson.fromJson(json, BudgetEntity::class.java)
     }
 
-    fun saveUserToPreferences(context: Context, budget: BudgetEntity) {
+    fun saveBudgetToPreferences(context: Context, budget: BudgetEntity) {
         val jsonString = budgetToJson(budget)
         val sharedPreferences = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
         with(sharedPreferences.edit()) {

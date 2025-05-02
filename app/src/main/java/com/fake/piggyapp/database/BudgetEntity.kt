@@ -9,5 +9,5 @@ data class BudgetEntity(
     var name: String,
     var category: String,
     var min: Double,
-    var max: String
+    var max: Double
 )
