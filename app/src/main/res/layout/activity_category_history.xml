@@ -5,26 +5,26 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TransactionHistory">
+    tools:context=".CategoryHistory">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewTransaction"
+        android:id="@+id/recyclerView"
         android:layout_width="387dp"
         android:layout_height="563dp"
         app:layout_constraintBottom_toTopOf="@id/btnClearHistory"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_transaction" />
+        tools:listitem="@layout/item_category" />
 
     <Button
         android:id="@+id/btnClearHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Clear All Transactions"
+        android:text="Clear All Categories"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recyclerViewTransaction" />
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".CategoryActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/piggy_pink"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="262dp"
+                    android:layout_height="61dp"
+                    android:gravity="center"
+                    android:text="Category"
+                    android:textAlignment="center"
+                    android:textColor="@color/piggy_black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/black_rounded_corners"
+                    android:gravity="center"
+                    android:text="Add Category"
+                    android:textAlignment="center"
+                    android:textColor="@color/piggy_white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="262dp"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/piggy_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etCategoryName"
+                    android:layout_width="266dp"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/rounded_corners"
+                    android:ems="10"
+                    android:hint="Groceries"
+                    android:inputType="text"
+                    android:paddingLeft="10dp" />
+
+
+
+                <Button
+                    android:id="@+id/btnAddCategory"
+                    android:layout_width="180dp"
+                    android:layout_height="64dp"
+                    android:backgroundTint="@color/piggy_black"
+                    android:text="Add"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnMyCategories"
+                    android:layout_width="180dp"
+                    android:layout_height="64dp"
+                    android:backgroundTint="@color/piggy_black"
+                    android:text="My Categories"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</LinearLayout>
