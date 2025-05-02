@@ -19,8 +19,6 @@
 - https://
 
 ## REFERENCES
-- Module Manual
-- GeeksforGeeks
-- CHATGPT
-
-  
+- The IIE. 2025. PROG7313: Module Manual. The Independent Institute of Education: Unpublished
+- Stack Overflow user nll (2020, May 18). Fill spinner with Room Database. Stack Overflow. https://stackoverflow.com/questions/61875405/fill-spinner-with-room-database
+- OpenAI. 2025. Chat-GPT (Version 4-turbo). [Large language model]. Available at: https://chat.openai.com/ [Accessed: 2 May 2024].
