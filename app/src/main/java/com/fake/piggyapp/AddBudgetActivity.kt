@@ -2,6 +2,7 @@ package com.fake.piggyapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,7 @@ import com.fake.piggyapp.databinding.ActivityBudgetBinding
 import kotlinx.coroutines.launch
 
 class AddBudgetActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityAddBudgetBinding
     private var budget = BudgetEntity(0, "", "", 0.0, 0.0)
 
@@ -29,21 +31,17 @@ class AddBudgetActivity : AppCompatActivity() {
             val bname = binding.etBudgetName.text.toString().trim()
             val bamount = binding.etBudgetAmount.text.toString().trim().toDoubleOrNull() ?: 0.0
             val bcat = binding.spnCategory.selectedItem.toString().trim()
-            val brecurs = binding.spnRecurs.selectedItem.toString().trim()
-            val bperiod = binding.spnPeriod.selectedItem.toString().trim()
 
-            if (bname.isEmpty() || bamount == 0.0 || bcat.isEmpty() || brecurs.isEmpty() || bperiod.isEmpty()) {
+            if (bname.isEmpty() || bamount == 0.0 || bcat.isEmpty()) {
                 Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener
             }
 
             //Update the budget object
-//            budget.name = bname
-//            budget.min = bamount
-//            budget.max = bcat
-//            budget.category = brecurs
-//            budget.category = bperiod
+            budget.name = bname
+            budget.min = bamount
+            budget.category = bcat
 
             // Save to SharedPreferences (optional)
             JsonUtils.saveBudgetToPreferences(this@AddBudgetActivity, budget)
