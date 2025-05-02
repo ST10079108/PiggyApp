@@ -227,7 +227,7 @@
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnAddImage"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -256,7 +256,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnAddTransaction"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="Add"

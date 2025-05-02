@@ -24,16 +24,16 @@ class HomeActivity : AppCompatActivity() {
 
         binding.bottomNavView.setOnItemSelectedListener {
             item -> when (item.itemId) {
-                //R.id.itemStat -> {
-            //                    val intent = Intent(this, StatisticActivity::class.java)
-            //                    startActivity(intent)
-            //                    true
-            //                }
-                //R.id.itemTrans -> {
-            //                    val intent = Intent(this, TransactionActivity::class.java)
-            //                    startActivity(intent)
-            //                    true
-            //                }
+                R.id.itemStat -> {
+                    val intent = Intent(this, StatsActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.itemTrans -> {
+                    val intent = Intent(this, transactionActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
                 R.id.itemHome -> true
                 R.id.itemBudget -> {
                     val intent = Intent(this, BudgetActivity::class.java)
