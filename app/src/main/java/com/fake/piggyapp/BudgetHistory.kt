@@ -1,5 +1,6 @@
 package com.fake.piggyapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -14,6 +15,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.fake.piggyapp.databinding.ActivityCategoryHistoryBinding
 
 class BudgetHistory : AppCompatActivity() {
 
@@ -25,8 +27,38 @@ class BudgetHistory : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // View binding
         binding = ActivityBudgetHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.BottomNavView.setOnItemSelectedListener {
+                item -> when (item.itemId) {
+            R.id.itemStat -> {
+                val intent = Intent(this, StatsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemTrans -> {
+                val intent = Intent(this, TransactionHistory::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemHome -> {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemBudget -> true
+            R.id.itemProfile -> {
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+                true
+            }
+
+            else -> false
+        }
+        }
 
         db = AppDatabase.getDatabase(this) as AppDatabase
         budgetDAO = db.budgetDAO()
