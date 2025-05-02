@@ -28,7 +28,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bottomNavView.setOnItemSelectedListener {
+        binding.BottomNavigationView.setOnItemSelectedListener {
             item -> when (item.itemId) {
                 R.id.itemStat -> {
                     val intent = Intent(this, StatsActivity::class.java)

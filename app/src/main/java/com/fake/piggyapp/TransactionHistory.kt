@@ -1,5 +1,6 @@
 package com.fake.piggyapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fake.piggyapp.database.BudgetDAO
 import com.fake.piggyapp.databinding.ActivityBudgetHistoryBinding
+import com.fake.piggyapp.databinding.ActivityHomeBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,8 +29,40 @@ class TransactionHistory : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // View binding
         binding = ActivityTransactionHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.BottomNavigationView.setOnItemSelectedListener {
+                item -> when (item.itemId) {
+            R.id.itemStat -> {
+                val intent = Intent(this, StatsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemTrans -> true
+            R.id.itemHome -> {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemBudget -> {
+                val intent = Intent(this, BudgetActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemProfile -> {
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+                true
+            }
+
+            else -> false
+        }
+        }
+
+
 
         db = AppDatabase.getDatabase(this) as AppDatabase
         transactionDAO = db.transactionDAO()
@@ -52,6 +86,8 @@ class TransactionHistory : AppCompatActivity() {
                 }
             }
         }
+
+
     }
 
     private fun loadTransactions() {

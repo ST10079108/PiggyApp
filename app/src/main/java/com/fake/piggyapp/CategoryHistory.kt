@@ -1,5 +1,6 @@
 package com.fake.piggyapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +11,7 @@ import com.fake.piggyapp.databinding.ActivityCategoryHistoryBinding
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.fake.piggyapp.databinding.ActivityTransactionHistoryBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,6 +27,43 @@ class CategoryHistory : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // View binding
+        binding = ActivityCategoryHistoryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.BottomNavView.setOnItemSelectedListener {
+                item -> when (item.itemId) {
+            R.id.itemStat -> {
+                val intent = Intent(this, StatsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemTrans -> {
+                val intent = Intent(this, TransactionHistory::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemHome -> {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemBudget -> {
+                val intent = Intent(this, BudgetActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.itemProfile -> {
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+                true
+            }
+
+            else -> false
+        }
+        }
+
         binding = ActivityCategoryHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
