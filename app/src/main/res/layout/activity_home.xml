@@ -201,7 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             app:itemIconTint="@null"
-            app:labelVisibilityMode="unlabeled"
+            app:labelVisibilityMode="auto"
             app:menu="@menu/navigation_bar" />
     </LinearLayout>
 

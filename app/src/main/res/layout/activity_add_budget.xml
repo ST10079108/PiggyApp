@@ -9,14 +9,18 @@
     tools:context=".AddTransactionActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="5dp" />
+            android:layout_height="15dp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -35,7 +39,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="30dp" />
 
         <LinearLayout
             android:layout_width="330dp"
@@ -47,17 +51,26 @@
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Budget Name"
+                android:textColor="@color/piggy_black"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextText"
                 android:layout_width="165dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/rounded_corners"
                 android:ems="10"
-                android:inputType="text"
-                android:text="Name" />
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="monthly groceries"
+                android:inputType="text" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="330dp"
@@ -69,14 +82,22 @@
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Category"
+                android:textColor="@color/piggy_black"
+                android:textSize="16sp" />
 
             <Spinner
                 android:id="@+id/spinner4"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@drawable/rounded_corners" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="330dp"
@@ -88,16 +109,26 @@
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Amount"
+                android:textColor="@color/piggy_black"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextNumberDecimal2"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/rounded_corners"
                 android:ems="10"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="3000.00"
                 android:inputType="numberDecimal" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="330dp"
@@ -109,14 +140,22 @@
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Period"
+                android:textColor="@color/piggy_black"
+                android:textSize="16sp" />
 
             <Spinner
                 android:id="@+id/spinner5"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@drawable/rounded_corners" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="330dp"
@@ -124,19 +163,44 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView39"
+                android:id="@+id/textView40"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Recurrence"
+                android:textColor="@color/piggy_black"
+                android:textSize="16sp" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal3"
+            <Spinner
+                android:id="@+id/spinner6"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:background="@drawable/rounded_corners" />
         </LinearLayout>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Add" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:menu="@menu/navigation_bar" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
