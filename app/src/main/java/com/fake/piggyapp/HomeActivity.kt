@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
                     true
                 }
                 R.id.itemTrans -> {
-                    val intent = Intent(this, AddTransactionActivity::class.java)
+                    val intent = Intent(this, transactionActivity::class.java)
                     startActivity(intent)
                     true
                 }
