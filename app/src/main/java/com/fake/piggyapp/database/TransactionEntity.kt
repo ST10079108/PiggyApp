@@ -12,7 +12,6 @@ data class TransactionEntity(
     var category: String, //groceries, entertainment, salary, rent
     var description: String,
     var recurringType: String, // no, weekly, monthly, yearly
-    var image: ByteArray? = null,
-    var userId: Int // Foreign key
+    var image: ByteArray? = null
 
 )

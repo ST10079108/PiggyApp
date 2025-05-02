@@ -1,20 +1,76 @@
 package com.fake.piggyapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.fake.piggyapp.database.AppDatabase
+import com.fake.piggyapp.database.TransactionEntity
+import com.fake.piggyapp.databinding.ActivityTransactionHistoryBinding
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.fake.piggyapp.database.BudgetEntity
+import com.fake.piggyapp.databinding.ActivityAddTransactionBinding
+import com.fake.piggyapp.databinding.ActivityBudgetBinding
+import kotlinx.coroutines.launch
 
 class AddTransactionActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityAddTransactionBinding
+    private var transaction = TransactionEntity(0, "", 0.0, "", "", "", "")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_add_transaction)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        binding = ActivityAddTransactionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        binding.btnAddTransaction.setOnClickListener{
+            //Get user input
+            var tType = binding.spType.selectedItem.toString().trim()
+            var tAmount = binding.etTransactionAmount.text.toString().trim().toDoubleOrNull() ?: 0.0
+            var tDate = binding.etDate.text.toString().trim()
+            var tCategory = binding.spCategory.selectedItem.toString().trim()
+            var tDescription = binding.etDescription.text.toString().trim()
+            var tRecurringType = binding.spRecurrence.selectedItem.toString().trim()
+
+
+            if (tType.isEmpty() || tAmount == 0.0 || tDate.isEmpty() || tCategory.isEmpty() || tDescription.isEmpty() ||tRecurringType.isEmpty() ) {
+                Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT)
+                    .show()
+                return@setOnClickListener
+            }
+
+            //Update the transaction object
+            transaction.type = tType
+            transaction.amount = tAmount
+            transaction.date = tDate
+            transaction.category = tCategory
+            transaction.description = tDescription
+            transaction.recurringType = tRecurringType
+
+            // Save to SharedPreferences (optional)
+            JsonUtils.saveTransactionToPreferences(this@AddTransactionActivity, transaction)
+
+            // Save to Room
+            val db = AppDatabase.getDatabase(this) as AppDatabase
+            val dao = db.transactionDAO()
+
+            kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.IO).launch {
+                transaction.id = 0
+                dao.insert(transaction)
+            }
+
+            Toast.makeText(this, "Transaction saved to history!", Toast.LENGTH_SHORT).show()
         }
+
+        binding.btnAddTransaction.setOnClickListener {
+            val intent = Intent(this, TransactionHistory::class.java)
+            startActivity(intent)
+        }
+
     }
 }

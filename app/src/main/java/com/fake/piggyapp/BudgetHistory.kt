@@ -45,7 +45,7 @@ class BudgetHistory : AppCompatActivity() {
                 val budgets = budgetDAO.getAllBudgets()
                 withContext(Dispatchers.Main) {
                     budgetAdapter.updateBudgets(budgets)
-                    Toast.makeText(this@BudgetHistory, "All orders deleted!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BudgetHistory, "All budgets deleted!", Toast.LENGTH_SHORT).show()
                 }
             }
         }

@@ -8,7 +8,7 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/tvTransDate"
+        android:id="@+id/tvTransactionDate"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:gravity="center_horizontal|center_vertical"
@@ -38,7 +38,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvTransAmount"
+            android:id="@+id/tvTransactionAmount"
             android:layout_width="175dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -65,7 +65,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvTransType"
+            android:id="@+id/tvTransactionType"
             android:layout_width="175dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -92,7 +92,7 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/tvTransCategory"
+            android:id="@+id/tvTransactionCategory"
             android:layout_width="175dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -120,7 +120,7 @@
             android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/tvTransRecurrence"
+            android:id="@+id/tvTransactionRecurrence"
             android:layout_width="175dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -131,7 +131,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvTransDescription"
+        android:id="@+id/tvTransactionDescription"
         android:layout_width="175dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
