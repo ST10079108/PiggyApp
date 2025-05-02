@@ -224,14 +224,6 @@
                             android:paddingLeft="10dp" />
 
                         <Button
-                            android:id="@+id/btnSaveGoal2"
-                            android:layout_width="180dp"
-                            android:layout_height="64dp"
-                            android:backgroundTint="@color/piggy_black"
-                            android:text="Save"
-                            android:textSize="15sp" />
-
-                        <Button
                             android:id="@+id/btnSaveGoal"
                             android:layout_width="180dp"
                             android:layout_height="64dp"
